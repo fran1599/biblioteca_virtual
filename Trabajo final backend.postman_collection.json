@@ -1,0 +1,433 @@
+{
+	"info": {
+		"_postman_id": "4914d099-453f-47be-829b-1decc647f3f8",
+		"name": "Trabajo final backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24753012"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Obtener todos los libros",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWZhNTk3YjMzNTg4ZmJiNjExYjkzMzgiLCJlbWFpbCI6ImZyYW5jb2plc3VzZmFyaUBnbWFpbC5jb20iLCJpYXQiOjE3MTA5MDYzODIsImV4cCI6MTcxMDkwODM4Mn0.q_nYWap1FVSB4gUUmmdw4U3nm0QwWSC4ZnJTpS1tyS8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url_base}}/books/getBooks",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"books",
+								"getBooks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener libro random",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/books/getBookRandom",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"books",
+								"getBookRandom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar libro",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWZhNTk3YjMzNTg4ZmJiNjExYjkzMzgiLCJlbWFpbCI6ImZyYW5jb2plc3VzZmFyaUBnbWFpbC5jb20iLCJpYXQiOjE3MTA5NTUwMzEsImV4cCI6MTcxMDk1NzAzMX0.kuLyMPRQIL8o77LzfV59cSYJf9CxdruEhHNCqWh0l1w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": 3,\r\n    \"isbn\": 12345678,\r\n    \"name\": \"Título 3\",\r\n    \"author\": \"Arturo\",\r\n    \"editorial\": \"Camelur\",\r\n    \"price\": 5000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/books/createBook",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"books",
+								"createBook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar registro de libro",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": 1,\r\n    \"isbn\": 12345612,\r\n    \"name\": \"Prueba de logs\",\r\n    \"author\": \"Jorgee\",\r\n    \"editorial\": \"Caperuzaa\",\r\n    \"price\": 50000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/books/updateBookById/65d3bc1f29fc42f5969e7a52",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"books",
+								"updateBookById",
+								"65d3bc1f29fc42f5969e7a52"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar registro",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/books/delete/65d2c19027b35b149e6ca171",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"books",
+								"delete",
+								"65d2c19027b35b149e6ca171"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrado lógico",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/books/logicalDeleteBookById/65d3bc1f29fc42f5969e7a52",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"books",
+								"logicalDeleteBookById",
+								"65d3bc1f29fc42f5969e7a52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reactivar libro",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/books/activateBookById/65d3bc1f29fc42f5969e7a52",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"books",
+								"activateBookById",
+								"65d3bc1f29fc42f5969e7a52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://openlibrary.org/random",
+							"protocol": "https",
+							"host": [
+								"openlibrary",
+								"org"
+							],
+							"path": [
+								"random"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Logs",
+			"item": [
+				{
+					"name": "Get all logs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/logs/getAllLog",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"logs",
+								"getAllLog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all logs",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/logs/deleteAllLog",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"logs",
+								"deleteAllLog"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "newUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Franco Jesus\",\r\n  \"lastname\": \"Fariña\",\r\n  \"document\": \"38279412\",\r\n  \"email\": \"francojesusfari@gmail.com\",\r\n  \"phone\": \"3385464604\",\r\n  \"password\": \"1234ABc_\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/users/newUser",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"users",
+								"newUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/users/getAllUsers",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"users",
+								"getAllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"_id\": \"65f350c14ea7d92973bff531\",\r\n  \"name\": \"Franco Jesus\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/users/updateUserById",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"users",
+								"updateUserById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"_id\": \"65f355a62b49e07692a9294b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/users/deleteUserById",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"users",
+								"deleteUserById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"francojesusfari@gmail.com\",\r\n  \"password\": \"1234ABc_\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/users/loginUser",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"users",
+								"loginUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url_base",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
